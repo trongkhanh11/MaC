@@ -1,1 +1,1 @@
-# MaC
+# MaC (Music and Chill)
