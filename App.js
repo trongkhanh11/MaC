@@ -1,29 +1,19 @@
 import express from 'express';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { engine } from 'express-handlebars';
+
+import activate_views from './middlewares/view.mdw.js';
+import activate_routes from './middlewares/routes.mdw.js';
 
 const app = express();
 const PORT = 3000;
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static('public'));
-
-app.engine('hbs', engine({
-    extname: 'hbs',
-    defaultLayout: 'main'
+app.use(express.urlencoded({
+    extended: true
 }));
-app.set('view engine', 'hbs');
-app.set('views', './views');
 
-app.get('/', function(req, res) {
-    res.render('home');
-});
-
-app.get('/about', function(req, res) {
-    res.render('about');
-});
+activate_views(app);
+activate_routes(app);
 
 app.listen(PORT, function() {
-    console.log(`Example app listening at http://localhost:${PORT}`)
+    console.log(`E-Commerce App listening at http://localhost:${PORT}`)
 });
