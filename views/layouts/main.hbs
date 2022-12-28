@@ -33,18 +33,18 @@
 <body>
   <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a href="">Music And Chill</a></h1>
+          <h1 class="logo"><a href="/">Music And Chill</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html" class="logo"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
 
-          <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter song name to search">
-              <div class="input-group-append"><button class="btn btn-primary"><i class="bi bi-search"></i></button></div>
+          <div class="search-bar">
+              <input type="text" placeholder="Enter song name to search">
+              <img src="img/search.png">
           </div>
 
           <nav id="navbar" class="navbar">
               <ul>
-                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                  <li><a class="nav-link scrollto active" href="/">Home</a></li>
                   <li class="dropdown"><a href="#"><span>Music genres</span> <i class="bi bi-chevron-down"></i></a>
                   <ul>
                       <li><a href="#">Drop Down 1</a></li>
@@ -62,16 +62,16 @@
                       <li><a href="#">Drop Down 4</a></li>
                   </ul>
               </li>
-              <li><a class="nav-link scrollto" href="#course">Video tutorial</a></li>
+              <li><a class="nav-link scrollto" href="/videoTutorial">Video tutorial</a></li>
               <li><a class="nav-link scrollto" href="#post_song">Post song</a></li>
               {{!-- <li><a class="nav-link scrollto" href="#signup">Sign up</a></li>
               <li><a class="login scrollto" href="#login">Login</a></li> --}}
-              <img src="img/user.png" class="user-pic" onclick="toggleMenu()"></img>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
 
           <!-- Sub menu when clicking on user avt -->
+          <img src="img/user.png" class="user-pic" onclick="toggleMenu()"></img>
           <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
               <div class="user-info">
