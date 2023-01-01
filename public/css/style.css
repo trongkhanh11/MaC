@@ -1591,3 +1591,202 @@ body {
     display: initial;
   }
 }
+
+/*========================
+# New Post
+========================*/
+
+#NewPost{
+  display: block;
+  margin-top: 150px;
+}
+
+#NewPost .title{
+  text-align: center;
+  color: #2487ce;
+}
+
+#NewPost .newpost-form{
+  justify-content: center;
+  margin: 0 30% 0 30%;
+}
+
+#NewPost #n_song{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#NewPost #chords{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 400px;
+  border-radius: 20px;
+}
+
+#NewPost #singer{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#NewPost #author{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#NewPost #genre{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#NewPost .btn{
+  margin-left: 1205px;
+  font-size: 30px;
+  border: none;
+  border-radius: 20px;
+  background: #097aca;
+  color: #fff;
+}
+
+/*======================
+#New Post Video
+======================*/
+
+#NewPost_V{
+  display: block;
+  margin-top: 150px;
+}
+
+#NewPost_V .title{
+  text-align: center;
+  color: #2487ce;
+}
+
+#NewPost_V .newpost-form{
+  justify-content: center;
+  margin: 0 30% 0 30%;
+}
+
+#NewPost_V #n_video{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#NewPost_V #Note{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 400px;
+  border-radius: 20px;
+}
+
+#NewPost_V #source{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#NewPost_V .btn{
+  margin-left: 1205px;
+  font-size: 30px;
+  border: none;
+  border-radius: 20px;
+  background: #097aca;
+  color: #fff;
+}
+
+/*====================
+# Request New Song
+====================*/
+
+#RQNSong{
+  display: block;
+  margin-top: 150px;
+}
+
+#RQNSong .title{
+  text-align: center;
+  color: #2487ce;
+}
+
+#RQNSong .RQNSong-form{
+  justify-content: center;
+  margin: 0 30% 0 30%;
+}
+
+#RQNSong #rqnn_song{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#RQNSong #Lyrics{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 400px;
+  border-radius: 20px;
+}
+
+#RQNSong #rqs_singer{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#RQNSong #rqs_author{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#RQNSong #rqs_genre{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#RQNSong #rqs_link{
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#RQNSong .btn{
+  margin-left: 1066px;
+  font-size: 30px;
+  border: none;
+  border-radius: 20px;
+  background: #097aca;
+  color: #fff;
+}

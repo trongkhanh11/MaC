@@ -11,5 +11,4 @@ router.get('/login', async function (req, res) {
     layout: false
   });
 })
-
 export default router;
