@@ -8,6 +8,6 @@ router.get('/', async function (req, res) {
 
 router.get('/watchVideo', async function (req, res) {
     res.render('vwVideoTutorial/watchVideo');
-  })
+})
 
 export default router;

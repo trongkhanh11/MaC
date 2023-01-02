@@ -1,22 +1,33 @@
-<form action="" id="NewPost_V">
-    <div class="newpost-form">
-        <h1 class="title">
-            New Post Video
-        </h1>
+<section id="post">
+    <div class="container">
+        <h1 class="title">New Post</h1>
+        <form action="" id="newPost">
+            <div class="row">
+                <div class="col-20">
+                    <label for="videoName">Name of video:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="videoName" name="videoName" placeholder="Enter video name...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="desc">Video description:</label>
+                </div>
+                <div class="col-80">
+                    <textarea id="desc" name="desc" placeholder="Description of your video..." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row file-upload">
+                <div class="col-20">
+                    <label for="singer">Source:</label>
+                </div>
+                <div class="col-80">
+                    <input type="file" id="myFile" name="filename">
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
-    <div class="newpost-form">
-        <div>
-            Name of video:
-        </div>
-        <input type="text" id="n_video">
-        <div>
-            Note:
-        </div>
-        <input id="Note">
-        <div>
-            Source:
-        </div>
-        <input id="source">
-    </div>
-    <input type="submit" value="Post" class="btn">
-</form>
+</section>
