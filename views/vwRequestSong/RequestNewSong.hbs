@@ -1,34 +1,49 @@
-<form action="" id="RQNSong">
-    <div class="RQNSong-form">
-        <h1 class="title">
-            Request New Song
-        </h1>
+<section id="post">
+    <div class="container">
+        <h1 class="title">Request New Song</h1>
+        <form action="" id="newPost">
+            <div class="row">
+                <div class="col-20">
+                    <label for="songName">Name of song:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="songName" name="songName" placeholder="Enter song name...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="Lyrics">Lyrics:</label>
+                </div>
+                <div class="col-80">
+                    <textarea id="Lyrics" name="Lyrics" placeholder="Lyrics of this song..." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="singer">Singer:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="singer" name="singer" placeholder="Name of the singer performing this song...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="author">Author:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="author" name="author" placeholder="Name of the author...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="genre">Genre:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="genre" name="genre" placeholder="Music genre...">
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
-    <div class="RQNSong-form">
-        <div>
-            Name of song:
-        </div>
-        <input type="text" id="rqnn_song">
-        <div>
-            Lyrics:
-        </div>
-        <input id="Lyrics">
-        <div>
-            Singer:
-        </div>
-        <input id="rqs_singer">
-        <div>
-            Author:
-        </div>
-        <input id="rqs_author">
-        <div>
-            Genre:
-        </div>
-        <input id="rqs_genre">
-        <div>
-            Link song:
-        </div>
-        <input id="rqs_link">
-    </div>
-    <input type="submit" value=" Send Request" class="btn">
-</form>
+</section>

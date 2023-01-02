@@ -1162,17 +1162,22 @@ body {
 #rating .star-rating label{
   font-size: 22px;
   margin-top: 10px;
-  color: #444;
+  color: #fd4;
   padding: 5px;
   float: right;
   transition: all 0.2s ease;
 }
-#rating input:not(:checked) ~ label:hover,
+
+#rating #rate-5{
+  color: #444;
+}
+
+/* #rating input:not(:checked) ~ label:hover,
 #rating input:not(:checked) ~ label:hover ~ label{   color: #fd4;
 }
 #rating input:checked ~ label{
   color: #fd4;
-}
+} */
   
 /*--------------------------------------------------------------
 # Footer
@@ -1702,79 +1707,150 @@ body {
   }
 }
 
-/*====================
-# Request New Song
-====================*/
+/*=====================
+# Playlist
+=====================*/
 
-#RQNSong{
-  display: block;
-  margin-top: 150px;
+#Playlist{
+  margin-top: 100px;
 }
 
-#RQNSong .title{
+#Playlist .title_ll{
   text-align: center;
+  color: #097aca;
+}
+
+#Playlist .ll{
+  margin-top: 50px;
+}
+
+#Playlist .ll-box{
+  padding: 15px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#Playlist .ll-box:hover {
+  transform: scale(1.08);
+}
+
+#Playlist .ll-box:hover .title a {
   color: #2487ce;
 }
 
-#RQNSong .RQNSong-form{
+/*=================================
+# Song
+=================================*/
+
+#Song{
+  margin-top: 100px;
+}
+
+#Song .infor-song-form{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#Song .Name_song{
+  font-size: 60px;
+  text-align: center;
+}
+
+#Song pre{
+  font-size: 20px;
+}
+
+#Song .infor-song{
+  background: #fff;
+  border: 2px solid #3e9bdd;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#Song .add-playlist{
+  margin-top: 10px;
+}
+
+#Song #show-playlist{
+  opacity: 0;
+  pointer-events: none;
+}
+
+#Song #show-playlist.show{
+  opacity: 1;
+  pointer-events: all;
+}
+
+#Song #Rating{
+  display: flex;
   justify-content: center;
-  margin: 0 30% 0 30%;
 }
 
-#RQNSong #rqnn_song{
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 20px;
+#Song #Rating .star-Rating input {
+  display: none;
 }
 
-#RQNSong #Lyrics{
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  padding-bottom: 400px;
-  border-radius: 20px;
+#Song #Rating input:not(:checked) ~ label:hover,
+#Song #Rating input:not(:checked) ~ label:hover ~ label{   color: #fd4;
+}
+#Song #Rating input:checked ~ label{
+  color: #fd4;
 }
 
-#RQNSong #rqs_singer{
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 20px;
+#Song .rate{
+  text-align: center;
 }
 
-#RQNSong #rqs_author{
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 20px;
+#Song #Rating .star-Rating label{
+  font-size: 22px;
+  margin-top: 10px;
+  color: #444;
+  padding: 5px;
+  float: right;
+  transition: all 0.2s ease;
 }
 
-#RQNSong #rqs_genre{
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
+/*============================
+# Top Songs
+============================*/
+
+#Playlist .top_songs_form{
+  display: flex;
+  justify-content: space-between;
+}
+
+#Playlist #rating{
+  margin-top: 30px;
+}
+
+#Playlist #rating .star-rating input {
+  display: none;
+}
+#Playlist #rating .star-rating label{
+  font-size: 22px;
+  margin-top: 10px;
+  color: #fd4;
+  padding: 5px;
+  float: right;
+
+}
+
+#Playlist .rated{
   margin-bottom: 20px;
-  border-radius: 20px;
+  text-align: center;
+  align-content: center;
 }
 
-#RQNSong #rqs_link{
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-}
-
-#RQNSong .btn{
-  margin-left: 1066px;
+#Playlist .likes{
+  text-align: center;
   font-size: 30px;
-  border: none;
-  border-radius: 20px;
-  background: #097aca;
-  color: #fff;
 }
