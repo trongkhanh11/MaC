@@ -1,34 +1,27 @@
-<form action="" id="RQNSong">
-    <div class="RQNSong-form">
-        <h1 class="title">
-            Request New Song
-        </h1>
+<form method="post" action="" id="RQNSong">
+  <div class="RQNSong-form">
+    <h1 class="title">
+      Request New Song
+    </h1>
+  </div>
+  <div class="RQNSong-form">
+    <div>
+      Name of song:
     </div>
-    <div class="RQNSong-form">
-        <div>
-            Name of song:
-        </div>
-        <input type="text" id="rqnn_song">
-        <div>
-            Lyrics:
-        </div>
-        <input id="Lyrics">
-        <div>
-            Singer:
-        </div>
-        <input id="rqs_singer">
-        <div>
-            Author:
-        </div>
-        <input id="rqs_author">
-        <div>
-            Genre:
-        </div>
-        <input id="rqs_genre">
-        <div>
-            Link song:
-        </div>
-        <input id="rqs_link">
+    <input type="text" id="rqnn_song" name="rqnn_song" />
+    <div>
+      Author:
     </div>
-    <input type="submit" value=" Send Request" class="btn">
+    <input id="rqs_author" name="rqs_author" />
+    <div>
+      Genre:
+    </div>
+    <input id="rqs_genre" name="rqs_genre" />
+  </div>
+  <input
+    type="submit"
+    value=" Send Request"
+    formaction="RequestNewSong/request"
+    class="btn"
+  />
 </form>
