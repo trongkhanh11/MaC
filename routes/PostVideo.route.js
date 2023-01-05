@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/', async function (req, res) {
   res.render('vwPost/PostVideo');
-})
+});
 
 const storage = multer.diskStorage({  //upload file to 'public/videos'
     destination: (req, file, cb) =>{
@@ -20,14 +20,14 @@ const storage = multer.diskStorage({  //upload file to 'public/videos'
         console.log(file);
         cb(null, originalname);
     }
-})
+});
 const upload = multer({ storage });
 
 router.post('/add', upload.single('video'),(req, res) =>  {
     //console.log(req.body);
     res.redirect('../');
     return post_videoModel.createPost(req.body,2);
-})
+});
 
 
 export default router

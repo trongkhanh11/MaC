@@ -9,7 +9,9 @@ import songRoute from '../routes/Song.route.js'
 
 export default function (app) {
   app.get('/', function (req, res) {
-    res.render('home');
+    res.render('vwAdmin/index', {
+      layout: false
+    });
   })
 
   app.use('/account', accountRoute, express.static('public'));
