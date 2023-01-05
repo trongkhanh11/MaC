@@ -1,12 +1,12 @@
 <section id="HotSong">
-    <h1 class="title_hs">Nhạc Tết</h1>
-
+    <h1 class="title_hs">{{playlist.1.TENPLAYLIST}}</h1>
+    {{#each this.playlist}}
    <div id="infor_hotsong">
         <div>
-            <h4 class="title"><a href="/Song/Chords">Thích Thích</a></h4>
-            <p>Poster: Sự Nguyễn</p>
-            <p>Singer: Phương Ly</p>
-            <p>Genre: Young music</p>
+            <h4 class="title"><a href="/Song/Chords">{{TENBAIHAT}}</a></h4>
+            <p>Poster: {{HOTEN}}</p>
+            <p>Singer:{{CASY}}</p>
+            <p>Genre: {{THELOAI}}</p>
         </div>
         <div id="rated_form">
             <div id="rated">
@@ -28,4 +28,5 @@
             </div>
         </div>
     </div>
+    {{/each}}
 </section>
