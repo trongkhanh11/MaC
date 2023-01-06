@@ -1,10 +1,12 @@
 <section id="viewbysearch">
+    {{#if list}}
+    {{#each this.list}}
     <div id="infor_hotsong">
         <div>
-            <h4 class="title"><a href="">Thích Thích</a></h4>
-            <p>Poster: Sự Nguyễn</p>
-            <p>Singer: Phương Ly</p>
-            <p>Genre: Young music</p>
+            <h4 class="title"><a href="">{{TENBAIHAT}}</a></h4>
+            <p>Poster: {{NGUOIDANG}}</p>
+            <p>Singer: {{CASY}}</p>
+            <p>Genre: {{THELOAI}}</p>
         </div>
         <div id="rated_form">
             <div id="rated">
@@ -26,4 +28,11 @@
             </div>
         </div>
     </div>
+    {{/each}}
+    {{else}}
+        <div>
+            Unknown Song
+        </div>
+    {{/if}}
+
 </section>
