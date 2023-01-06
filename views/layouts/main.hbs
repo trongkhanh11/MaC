@@ -42,6 +42,7 @@
               <img src="img/search.png">
           </div>
 
+          {{#if auth}}
           <nav id="navbar" class="navbar">
               <ul>
                   <li><a class="nav-link scrollto active" href="/">Home</a></li>
@@ -62,14 +63,13 @@
                       <li><a href="/PostVideo">Post Video</a></li>
                   </ul>
               </li>
-              {{!-- <li><a class="nav-link scrollto" href="#signup">Sign up</a></li>
-              <li><a class="login scrollto" href="#login">Login</a></li> --}}
+              {{!-- <li><a class="login scrollto" href="account/login">Login</a></li> --}}
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
-
           <!-- When the user is logged in -->
           <img src="img/user.png" class="user-pic" onclick="toggleMenu()"></img>
+
           <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
               <div class="user-info">
@@ -83,12 +83,40 @@
                 <p>Edit Profile</p>
               </a>
 
-              <a href="#" class="sub-menu-link">
+              <form id="frmLogout" action="/account/logout" method="post"></form>
+              <a href="javascript: $('#frmLogout').submit();" class="sub-menu-link" >
                 <i class="bi bi-box-arrow-right"></i>
                 <p>Logout</p>
               </a>
             </div>
           </div>
+
+          {{else}}
+          <nav id="navbar" class="navbar">
+              <ul>
+                  <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                  <li class="dropdown"><a href="#"><span>Music genres</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="#">Young music</a></li>
+                      <li><a href="#">Pop</a></li>
+                      <li><a href="#">US-UK</a></li>
+                      <li><a href="#">Indie</a></li>
+                      <li><a href="#">Bolero</a></li>
+                    </ul>
+                  </li>
+              <li><a class="nav-link scrollto" href="/videoTutorial">Video tutorial</a></li>
+              {{!-- <li><a class="nav-link scrollto" href="#post_song">Post song</a></li> --}}
+              <li class="dropdown"><a href="#"><span>Post</span> <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                      <li><a href="/Post">Post Song</a></li>
+                      <li><a href="/PostVideo">Post Video</a></li>
+                  </ul>
+              </li>
+              <li><a class="login scrollto" href="account/login">Login</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+          {{/if}}
       </div>
   </header><!-- End Header -->
 

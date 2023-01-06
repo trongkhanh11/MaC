@@ -1,6 +1,8 @@
 <section id="watch-videos">
     <div class="container">
+
         <div class="row">
+
             <div class="play-video">
                 <video controls muted autoplay>
                     <source src="videos/video-1.mp4" type="video/mp4">
@@ -39,13 +41,16 @@
 
                     <div class="add-comment">
                         <img src="img/user.png">
-                        <input type="text" placeholder="Write comment...">
+                        <input type="text" name="comment" placeholder="Write comment...">
                     </div>
                     <div class="old-comment">
                         <img src="img/user.png">
                         <div>
                             <h3>Trong Khanh <span>2 days ago</span></h3>
-                            <p>Video hay vcl</p>
+                            <p>Video hay vcl</p>  
+
+                            {{!-- <p>{{authUser.comment}}</p> đây là load cmt từ db --}}
+
                             <div class="acomment-action">
                                 <span>Reply</span>
                                 <a href="">All replies</a>
@@ -57,15 +62,21 @@
                         <div>
                             <h3>Dat Kha<span>2 days ago</span></h3>
                             <p>Video nhu cc</p>
+
+                            {{!-- <p>{{authUser.comment}}</p> đây là load cmt từ db --}}
                             <div class="acomment-action">
                                 <span>Reply</span>
                                 <a href="">All replies</a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            {{!-- Side bar bên phải --}}
             <div class="right-sidebar">
+
                 <div class="side-video-list">
                     <a href="" class="small-thumbnail"><img src="img/video-tutorials-avt/1.png"></a>
                     <div class="vid-info">
@@ -146,6 +157,7 @@
                         <p>15k Views </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

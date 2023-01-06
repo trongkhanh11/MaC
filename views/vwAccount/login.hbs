@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+{{#section 'js'}}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script>
+  $('#frmRegister').on('submit', function (e) {
+    e.preventDefault();
+
+    const username = $('#txtUsername').val();
+    if (username.length === 0) {
+      alert('Please input a valid username.');
+    }
+
+    $.getJSON(`/account/is-available?user=${username}`, function (data) {
+      if (data === false) {
+        alert(`${username} is not available.`);
+      } else {
+        $('#frmRegister').off('submit').submit();
+      }
+    });
+  });
+
+  $('#txtDoB').datetimepicker({
+    timepicker: false,
+    format: 'd/m/Y',
+    mask: true
+  });
+</script>
+{{/section}}
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -34,19 +64,31 @@
     <div id="login">
         <div class="container">
             <div class="signin-signup">
-                <form action="" class="sign-in-form">
+                
+                <form action="" class="sign-in-form" method="post">
+
                     <h2 class="title">
                         Sign in
                     </h2>
+
+                    {{#if err_message}}
+                        <div class="alert {{messageClass}}" role="alert">
+                            {{err_message}}
+                        </div>
+                    {{/if}}
+
                     <div class="input-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" placeholder="Username"> 
+                        <input type="text" name="username" placeholder="Username"> 
                     </div>
+
                     <div class="input-field">
                         <i class="fa fa-lock"></i>
-                        <input type="password" placeholder="Pasword"> 
+                        <input type="password" name="password" placeholder="Pasword"> 
                     </div>
+
                     <input type="submit" value="login" class="btn">
+
                     <p class="social-text">Or Sign in with social platform</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -64,23 +106,46 @@
                     </div>
                     <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
                 </form>
-                <form action="" class="sign-up-form">
+
+                
+
+                <form action="/account/register" method="post" class="sign-up-form" id="frmRegister">
                     <h2 class="title">
                         Sign up
                     </h2>
+
                     <div class="input-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" placeholder="Username"> 
+                        <input type="text" name="name" placeholder="Your name" id="txtName"> 
                     </div>
+
+                    <div class="input-field">
+                        <i class="fa fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" id="txtUsername"> 
+                    </div>
+
                     <div class="input-field">
                         <i class="fa fa-envelope"></i>
-                        <input type="email" placeholder="Email"> 
+                        <input type="email" name="email" placeholder="Email"> 
                     </div>
+
                     <div class="input-field">
                         <i class="fa fa-lock"></i>
-                        <input type="password" placeholder="Pasword"> 
+                        <input type="password" name="password" placeholder="Password"> 
                     </div>
+
+                    <div class="input-field">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" name="p" placeholder="Confirm Pasword"> 
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa fa-calendar"></i>
+                        <input name="dob" type="date" id="txtDoB"> 
+                    </div>
+
                     <input type="submit" value="signup" class="btn">
+
                     <p class="social-text">Or Sign in with social platform</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -108,7 +173,7 @@
                         <p>
                             Welcome back broooo!!!
                         </p>
-                        <button class="btn" id="sign-in-btn">Sign in </button>
+                        <button class="btn" id="sign-in-btn">Sign in</button>
                     </div>
                 </div>
                 <div class="panel right-panel">
@@ -119,7 +184,7 @@
                         <p>
                             Register account to felling on the beattt!!!
                         </p>
-                        <button class="btn" id="sign-up-btn">Sign up </button>
+                        <button class="btn" id="sign-up-btn">Sign up</button>
                     </div>
                 </div>
             </div>
