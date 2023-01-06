@@ -188,14 +188,14 @@ body {
     background: #fff;
     top: 80%;
     right: 5%;
-    width: 220px;
+    width: fit-content;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
     box-shadow: 1px 1px 5px rgba(119, 119, 119, .5);
   }
   
-  #header .sub-menu-wrap.open-menu {
+  #header .sub-menu-wrap.open-menu { 
     max-height: 330px;
   }
   
@@ -208,7 +208,6 @@ body {
   #header .user-info {
      display: flex;
      align-items: center;
-     justify-content: center;
   }
   
   #header .user-info img {

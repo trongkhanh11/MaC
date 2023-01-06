@@ -25,6 +25,7 @@
   <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="vendor/jquery-datetimepicker/jquery.datetimepicker.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
@@ -34,17 +35,23 @@
     <div id="login">
         <div class="container">
             <div class="signin-signup">
-                <form action="" class="sign-in-form">
+                {{!-- Login --}}
+                <form action="/account/login" method="post" class="sign-in-form">
                     <h2 class="title">
                         Sign in
                     </h2>
+                    {{#if err_message}}
+                        <div class="alert alert-danger" role="alert">
+                            {{err_message}}
+                        </div>
+                    {{/if}}
                     <div class="input-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" placeholder="Username"> 
+                        <input type="text" name="username" placeholder="Username" autocomplete = "off"> 
                     </div>
                     <div class="input-field">
                         <i class="fa fa-lock"></i>
-                        <input type="password" placeholder="Pasword"> 
+                        <input type="password" name="pass" placeholder="Password" autocomplete = "off"> 
                     </div>
                     <input type="submit" value="login" class="btn">
                     <p class="social-text">Or Sign in with social platform</p>
@@ -64,35 +71,38 @@
                     </div>
                     <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
                 </form>
-                <form action="" class="sign-up-form">
+
+                {{!-- Sign up --}}
+                <form class="sign-up-form" method="post" action="/account/signup">
                     <h2 class="title">
                         Sign up
                     </h2>
                     <div class="sign-up-input-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" placeholder="Your name"> 
+                        <input type="text" id="txtName" name="hoten" placeholder="Your name" autocomplete = "off" /> 
                     </div>
                     <div class="sign-up-input-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" placeholder="Username"> 
+                        <input type="text" id="txtUsername" name="username" placeholder="Username" autocomplete = "off" /> 
                     </div>
                     <div class="sign-up-input-field">
                         <i class="fa fa-envelope"></i>
-                        <input type="email" placeholder="Email"> 
+                        <input type="email" id="txtEmail" name="email" placeholder="Email" autocomplete = "off" /> 
                     </div>
                     <div class="sign-up-input-field">
                         <i class="fa fa-lock"></i>
-                        <input type="password" placeholder="Pasword"> 
+                        <input type="password" id="txtPass" name="pass" placeholder="Password" /> 
                     </div>
                     <div class="sign-up-input-field">
                         <i class="fa fa-lock"></i>
-                        <input type="password" placeholder="Confirm Pasword"> 
+                        <input type="password" id="txtConfirmPass" placeholder="Confirm Password" /> 
                     </div>
                     <div class="sign-up-input-field">
                         <i class="fa fa-calendar"></i>
-                        <input type="date" class="cal"> 
+                        <input type="text" id="txtDOB" name="ntnsinh" autocomplete = "off" /> 
                     </div>
                     <input type="submit" value="sign up" class="btn">
+                    {{!-- ------------------------------------ --}}
                     <p class="social-text">Or Sign in with social platform</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -151,9 +161,11 @@
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <script src="vendor/php-email-form/validate.js"></script>
     <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
+    <script src="js/sign-up-script.js"></script>
 
     <script>
         const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -182,6 +194,6 @@
         sign_in_btn2.addEventListener("click", () => {
             container.classList.remove("sign-up-mode2");
         });
-    </script>
+    </script>   
 </body>
 </html>

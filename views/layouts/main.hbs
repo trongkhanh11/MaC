@@ -55,45 +55,51 @@
                 </ul>
               </li>
               <li><a class="nav-link scrollto" href="/videoTutorial">Video tutorial</a></li>
-              {{!-- <li><a class="nav-link scrollto" href="#post_song">Post song</a></li> --}}
               <li class="dropdown"><a href="#"><span>Post</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="/Post">Post Song</a></li>
                   <li><a href="/PostVideo">Post Video</a></li>
                 </ul>
               </li>
-              {{!-- <li><a class="nav-link scrollto" href="#signup">Sign up</a></li>
-              <li><a class="login scrollto" href="#login">Login</a></li> --}}
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav><!-- .navbar -->
+              {{#if auth}}
+              <!-- When the user is logged in -->
+                </ul>
+                  <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
 
-          <!-- When the user is logged in -->
-          <img src="img/user.png" class="user-pic" onclick="toggleMenu()"></img>
-          <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-              <div class="user-info">
-                <img src="img/user.png">
-                <h3>User Name</h3>
-              </div>
-              <hr>
+                <img src="img/user.png" class="user-pic" onclick="toggleMenu()"></img>
+                <div class="sub-menu-wrap" id="subMenu">
+                  <div class="sub-menu">
+                    <div class="user-info">
+                      <img src="img/user.png">
+                      <h3>{{authUser.HOTEN}}</h3>
+                    </div>
+                    <hr>
 
-              <a href="/account/profile" class="sub-menu-link">
-                <i class="bi bi-person-fill"></i> 
-                <p>Edit Profile</p>
-              </a>
+                    <a href="/account/profile" class="sub-menu-link">
+                      <i class="bi bi-person-fill"></i> 
+                      <p>Edit Profile</p>
+                    </a>
 
-              <a href="/account/profile" class="sub-menu-link">
-                <i class="bi bi-music-note-list"></i> 
-                <p>Your playlist</p>
-              </a>
+                    <a href="/account/profile" class="sub-menu-link">
+                      <i class="bi bi-music-note-list"></i> 
+                      <p>Your playlist</p>
+                    </a>
 
-              <a href="#" class="sub-menu-link">
-                <i class="bi bi-box-arrow-right"></i>
-                <p>Logout</p>
-              </a>
-            </div>
-          </div>
+                    <form id="formLogout" action="/account/logout" method="post"></form>
+                    <a href="javascript: $('#formLogout').submit();" class="sub-menu-link">
+                      <i class="bi bi-box-arrow-right"></i>
+                      <p>Logout</p>
+                    </a>
+                  </div>
+                </div>
+                
+          {{else}}
+              <li><a class="login scrollto" href="/account/login">Login</a></li>
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+         {{/if}}
       </div>
   </header><!-- End Header -->
 
