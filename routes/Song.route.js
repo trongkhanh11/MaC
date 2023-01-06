@@ -1,4 +1,5 @@
 import express from 'express';
+import songModel from '../services/song.model.js'
 
 const router = express.Router();
 
@@ -11,7 +12,12 @@ router.get('/newSongs', async function (req, res) {
 });
 
 router.get('/Chords', async function (req, res) {
-  res.render('vwSong/Chords');
+    const mapost = req.query.mapost;
+    const list = await songModel.findChord(mapost);
+    console.log(list);
+    res.render('vwSong/Chords',{
+        list
+    });
 });
 
 router.get('/young', async function (req, res) {

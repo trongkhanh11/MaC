@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get('/', async function (req, res) {
     const bh = req.query.bh;
-    console.log(bh);
-    const list = await searchModel.findBH(bh);
+    const list = await searchModel.findPost(bh);
+    console.log(list);
     res.render('vwSearch/viewBySearch',{
         list
     });

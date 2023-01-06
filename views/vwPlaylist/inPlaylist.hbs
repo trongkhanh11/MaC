@@ -1,9 +1,10 @@
-<section id="HotSong">
-    <h1 class="title_hs">{{playlist.1.TENPLAYLIST}}</h1>
+<section >
+    {{#if playlist}}
+    <h1 class="title_hs">{{playlist.0.TENPLAYLIST}}</h1>
     {{#each this.playlist}}
    <div id="infor_hotsong">
         <div>
-            <h4 class="title"><a href="/search">{{TENBAIHAT}}</a></h4>
+            <h4 class="title"><a href="/search?bh={{TENBAIHAT}}">{{TENBAIHAT}}</a></h4>
             <p>Poster: {{HOTEN}}</p>
             <p>Singer:{{CASY}}</p>
             <p>Genre: {{THELOAI}}</p>
@@ -29,4 +30,9 @@
         </div>
     </div>
     {{/each}}
+    {{else}}
+        <div>
+            Don't have any song
+        </div>
+    {{/if}}
 </section>

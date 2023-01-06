@@ -7,6 +7,7 @@ import requestsongRoute from '../routes/RequestSong.route.js'
 import playlistRoute from '../routes/Playlist.route.js'
 import songRoute from '../routes/Song.route.js'
 import viewSearch from '../routes/Search.route.js'
+import adminRoute from '../routes/admin.route.js'
 
 
 // export default function (app) {
@@ -29,4 +30,5 @@ import viewSearch from '../routes/Search.route.js'
   app.use('/Playlist', playlistRoute, express.static('public'));
   app.use('/Song', songRoute, express.static('public'));
   app.use('/search', viewSearch, express.static('public'));
+  app.use('/admin', adminRoute, express.static('public'));
 }
