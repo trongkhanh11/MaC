@@ -1,0 +1,12 @@
+<section id="HotSong">
+    <h1 class="title_hs">Playlist</h1>
+    {{#each this.playlist_list}}
+        <div id="infor_hotsong">
+            <div>
+                <h4 class="title"><a href="/Playlist/inplaylist?pl={{MAPLAYLIST}}">{{TENPLAYLIST}}</a></h4>
+                <p>Người tạo: {{HOTEN}}</p>
+                <p>Thời gian đăng: {{TGDANG}}</p>
+            </div>
+        </div>
+    {{/each}}
+</section>

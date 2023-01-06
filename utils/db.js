@@ -1,12 +1,15 @@
-import knexObj from 'knex';
+import knexObj from 'knex'
 
-export default knexObj({
-  client: 'mysql2',
-  connection: {
-    host:'localhost',
-    user:'root',
-    password:'thanhminh2209',
-    database:'demo',
-    port: 3306
-  }
-});
+const knex = knexObj({
+          client: 'mysql2',
+          connection: {
+            host : '127.0.0.1',
+            port : 3306,
+            user : 'root',
+            password : '',
+            database : 'mac'
+          },
+          pool: {min: 0, max:10}
+        });
+
+export default knex;

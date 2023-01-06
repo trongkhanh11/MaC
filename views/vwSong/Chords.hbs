@@ -1,0 +1,54 @@
+<section id="Song">
+    <h1 class="Name_song">
+        {{list.0.TENBAIHAT}}
+    </h1>
+    <div class="infor-song-form">
+        <div class="Lyrics">
+            <pre>
+                {{list.0.CHORD}}
+            </pre>
+        </div> 
+        <div class="infor-form">
+            <div class="infor-song">
+                <h3 class="title-infor">Thông tin bài hát</h3>
+                <p>Singer: {{list.0.CASY}}</p>
+                <p>Genre: {{list.0.THELOAI}}</p>
+                <p>Poster: {{list.0.NGUOIDANG}}</p>
+            </div>
+            <div class="add-playlist">
+                <p><i class="fa fa-plus"></i><a id="btn-addplaylist" href="#"> Add to playlist</a></p>
+            </div>
+            <div id="show-playlist" class="">
+                <h3 class="title-ll">Your playlist</h3>
+                <p><input type="checkbox"></input> Nhạc chill</p>
+            </div>
+            <div class="publisher">
+                <div id="Rating">
+                    <div class="star-Rating">
+                        <h3 class="rate">Rate</h3>
+                        <input type="radio" name="rate" id="rate-5">
+                        <label for="rate-5" class="fa fa-star"></label>
+                        <input type="radio" name="rate" id="rate-4">
+                        <label for="rate-4" class="fa fa-star"></label>
+                        <input type="radio" name="rate" id="rate-3">
+                        <label for="rate-3" class="fa fa-star"></label>
+                        <input type="radio" name="rate" id="rate-2">
+                        <label for="rate-2" class="fa fa-star"></label>
+                        <input type="radio" name="rate" id="rate-1">
+                        <label for="rate-1" class="fa fa-star"></label>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const btn_show = document.getElementById('btn-addplaylist')
+    const show_pl = document.getElementById('show-playlist')
+
+    btn_show.addEventListener("click", () => {
+        show_pl.classList.add("show");
+    });     
+
+</script>

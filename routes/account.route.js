@@ -98,6 +98,6 @@ router.post('/profile', authWithRequiredPermission(1), async function (req, res)
 
   await userService.patch(req.session.authUser.ID, req.body.name, req.body.email);
   res.render('vwAccount/profile');
-})
+});
 
 export default router;

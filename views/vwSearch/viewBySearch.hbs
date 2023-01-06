@@ -1,12 +1,22 @@
-<section id="HotSong">
-    <h1 class="title_hs">New Songs</h1>
-   
+<section id="viewbysearch">
+    <h1 class="title_hs">TÌM KIẾM</h1>
+    {{#if list}}
+    {{#each this.list}}
     <div id="infor_hotsong">
+        <script>
+        function phanloai(){
+            alert({{list.0.LOAI}});
+        }
+        </script>
         <div>
-            <h4 class="title"><a href="/Song/Chords">Thích Thích</a></h4>
-            <p>Poster: Sự Nguyễn</p>
-            <p>Singer: Phương Ly</p>
-            <p>Genre: Young music</p>
+            <h4 class="title">
+                <a onclick="phanloai()" href="" id="theloai" >
+                    {{TENBAIHAT}}
+                </a>
+            </h4>
+            <p>Poster: {{NGUOIDANG}}</p>
+            <p>Singer: {{CASY}}</p>
+            <p>Genre: {{THELOAI}}</p>
         </div>
         <div id="rated_form">
             <div id="rated">
@@ -23,6 +33,16 @@
                     <label for="rate-1" class="fa fa-star"></label>        
                 </div>
             </div>
+            <div id="likes">
+                <i class="fa fa-thumbs-up"> 1000</i>
+            </div>
         </div>
     </div>
+    {{/each}}
+    {{else}}
+        <div>
+            Unknown Song
+        </div>
+    {{/if}}
+
 </section>

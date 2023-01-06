@@ -1,13 +1,37 @@
 <section id="post">
     <div class="container">
         <h1 class="title">New Post</h1>
-        <form action="" id="newPost">
+        <form action="add/" id="newPost" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-20">
+                    <label for="songName">Name of song:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="tenbh1" name="tenbh1" placeholder="Enter song name...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="singer">Singer:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="casy1" name="casy1" placeholder="Name of the singer performing this song...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20">
+                    <label for="genre">Genre:</label>
+                </div>
+                <div class="col-80">
+                    <input type="text" id="theloai1" name="theloai1" placeholder="Music genre...">
+                </div>
+            </div>
             <div class="row">
                 <div class="col-20">
                     <label for="videoName">Name of video:</label>
                 </div>
                 <div class="col-80">
-                    <input type="text" id="videoName" name="videoName" placeholder="Enter video name...">
+                    <input type="text" id="tenvideo1" name="tenvideo1" placeholder="Enter video name...">
                 </div>
             </div>
             <div class="row">
@@ -15,7 +39,7 @@
                     <label for="desc">Video description:</label>
                 </div>
                 <div class="col-80">
-                    <textarea id="desc" name="desc" placeholder="Description of your video..." style="height:200px"></textarea>
+                    <textarea id="describe1" name="describe1" placeholder="Description of your video..." style="height:200px"></textarea>
                 </div>
             </div>
             <div class="row file-upload">
@@ -23,11 +47,11 @@
                     <label for="singer">Source:</label>
                 </div>
                 <div class="col-80">
-                    <input type="file" id="myFile" name="filename">
+                    <input type="file" id="video" name="video" accept="video/*">
                 </div>
             </div>
             <br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" formaction="add/">
         </form>
     </div>
 </section>

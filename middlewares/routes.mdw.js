@@ -1,19 +1,26 @@
 import express from 'express';
 import accountRoute from '../routes/account.route.js';
 import videoTutorialRoute from '../routes/videoTutorial.route.js'
-import authWithRequiredPermission from './auth.mdw.js';
-import postRoute from '../routes/Post.route.js';
-import postvideoRoute from '../routes/PostVideo.route.js';
-import requestsongRoute from '../routes/RequestSong.route.js';
+import postRoute from '../routes/Post.route.js'
+import postvideoRoute from '../routes/PostVideo.route.js'
+import requestsongRoute from '../routes/RequestSong.route.js'
 import playlistRoute from '../routes/Playlist.route.js'
 import songRoute from '../routes/Song.route.js'
 import viewSearch from '../routes/Search.route.js'
 import adminRoute from '../routes/admin.route.js'
 
-export default function (app) {
-  app.get('/', function (req, res) {
-    res.render('home');
-  })
+
+// export default function (app) {
+//   app.get('/', function (req, res) {
+//     res.render('vwAdmin/index', {
+//       layout: false
+//     });
+//   })
+
+  export default function (app) {
+    app.get('/', function (req, res) {
+      res.render('home');
+    })
 
   app.get('/err', function (req, res) {
     throw new Error('Something broke!');
