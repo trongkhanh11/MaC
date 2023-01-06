@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 
 router.post('/add', function (req, res) {
     console.log(req.body);
-    res.redirect('../');
+    res.redirect('/post');
     return post_chordModel.createPost(req.body,2);
 });
 

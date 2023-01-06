@@ -1,0 +1,27 @@
+<section id="YourPlaylist">
+    <h1 class="title">Your Playlist</h1>
+
+    <div class="YourPlaylist_form">
+        {{#each this.playlist}}
+        <div id="infor_playlist">
+                <div>
+                    <h4><a href="/Playlist/inplaylist?pl={{MAPLAYLIST}}">{{TENPLAYLIST}}</a></h4>
+                    <p>Người tạo: {{HOTEN}}</p>
+                    <p>Thời gian đăng: {{TGDANG}}</p>
+                </div>
+        </div>
+        {{/each}}
+        <form id="CreatePlaylist" method="post">
+            <nav id="navbar" class="navbar">
+            <ul>
+              <li class="dropdown"><a href="#"><span class="title_cpl">Create Playlist</span></a>
+                <ul>
+                  <input type="text" id="namep" name="namep" placeholder="Enter name playlist...">
+                  <input id="create_btn" type="submit" value="Create" formaction="yourplaylist/add">
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </form>
+    </div>
+</section>

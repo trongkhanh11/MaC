@@ -6,7 +6,6 @@ export default function (app) {
 
         res.locals.auth  = req.session.auth;
         res.locals.authUser = req.session.authUser;
-        console.log(res.locals);
         next();
     });
 }

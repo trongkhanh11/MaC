@@ -96,4 +96,12 @@ router.post('/logout', function (req, res) {
   res.redirect(url);
 });
 
+router.post('/admin-logout', function (req, res) {
+  req.session.auth = false;
+  req.session.authUser = null;
+
+  const url = '/';
+  res.redirect(url);
+});
+
 export default router;

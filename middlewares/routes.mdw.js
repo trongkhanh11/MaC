@@ -6,6 +6,8 @@ import postvideoRoute from '../routes/PostVideo.route.js'
 import requestsongRoute from '../routes/RequestSong.route.js'
 import playlistRoute from '../routes/Playlist.route.js'
 import songRoute from '../routes/Song.route.js'
+import viewSearch from '../routes/Search.route.js'
+import adminRoute from '../routes/admin.route.js'
 
 export default function (app) {
   app.get('/', function (req, res) {
@@ -19,4 +21,6 @@ export default function (app) {
   app.use('/RequestNewSong', requestsongRoute, express.static('public'));
   app.use('/Playlist', playlistRoute, express.static('public'));
   app.use('/Song', songRoute, express.static('public'));
+  app.use('/search', viewSearch, express.static('public'));
+  app.use('/admin', adminRoute, express.static('public'));
 }

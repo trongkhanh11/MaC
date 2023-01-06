@@ -1,52 +1,12 @@
-<section id="Playlist">
-    <h1 class="title_pl">Playlist</h1>
-
-    <div class="choose_pl">
-        <div class="btn">
-            <i id="icon" class="fa fa-user"></i>
-            <p><a href="#" id="ypl_btn">Your Playlist</a></p>
+<section id="HotSong">
+    <h1 class="title_hs">Playlist</h1>
+    {{#each this.playlist_list}}
+        <div id="infor_hotsong">
+            <div>
+                <h4 class="title"><a href="/Playlist/inplaylist?pl={{MAPLAYLIST}}">{{TENPLAYLIST}}</a></h4>
+                <p>Người tạo: {{HOTEN}}</p>
+                <p>Thời gian đăng: {{TGDANG}}</p>
+            </div>
         </div>
-
-        <div class="btn">
-            <i id="icon" class="fa fa-users"></i>
-            <p><a href="#" id="opl_btn">Other's Playlist</a></p>
-        </div>
-    </div>
-
-    <div id="ypl_form" class="">
-        <h1 class="title_pl">Your Playlist</h1>
-        <div class="ypl">
-            <h4 class="title"><a href="">Nhạc Xuân</a></h4>
-            <p>Người đăng: Sự Nguyễn</p>
-            <p>Số bài hát: 10</p>
-        </div>
-    </div>
-
-    <div id="opl_form" class="">
-        <h1 class="title_pl">Other's Playlist</h1>
-        <div class="ypl">
-            <h4 class="title"><a href="">Nhạc Xuân</a></h4>
-            <p>Người đăng: Sự Nguyễn</p>
-            <p>Số bài hát: 10</p>
-        </div>
-    </div>
-
+    {{/each}}
 </section>
-
-<script>
-    const ypl_btn = document.getElementById('ypl_btn');
-    const opl_btn = document.getElementById('opl_btn');
-    
-    const show_ypl = document.getElementById('ypl_form');
-    const show_opl = document.getElementById('opl_form');
-
-    ypl_btn.addEventListener("click", () => {
-        show_ypl.classList.add("show");
-        show_opl.classList.remove("show");
-    });
-
-    opl_btn.addEventListener("click", () => {
-        show_opl.classList.add("show");
-        show_ypl.classList.remove("show");
-    });
-</script>

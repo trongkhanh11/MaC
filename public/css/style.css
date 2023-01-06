@@ -189,6 +189,7 @@ body {
     top: 80%;
     right: 5%;
     width: fit-content;
+    min-width: 220px;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
@@ -1044,6 +1045,15 @@ body {
   margin: 30px 0;
 }
 
+#watch-videos #submit_cmt {
+  background: #097aca;
+  border-color: #097aca;
+  border-radius: 8px;
+  margin-left: 700px;
+  padding: 2px 5px;
+  color: #fff;
+}
+
 #watch-videos .add-comment img {
   width: 35px;
   border-radius: 50%;
@@ -1766,74 +1776,40 @@ body {
 # Playlist
 =====================*/
 
-#Playlist{
+#YourPlaylist .YourPlaylist_form{
+  display: flex;
+}
+
+
+#create_btn{
+  margin-top: 5px;
+  margin-left: 65px;
+}
+
+#CreatePlaylist{
+  margin-top: 10px;
+}
+
+#YourPlaylist{
   margin-top: 100px;
 }
 
-#Playlist .title_pl{
+#YourPlaylist .title_cpl{
+  font-size: 20px;
+}
+
+#YourPlaylist .title{
   text-align: center;
   color: #097aca;
-  font-size: 100px;
+  font-size: 50px;
 }
 
-#Playlist .choose_pl{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
 
-#Playlist .btn{
-  padding: 30px 150px;
-  position: relative;
-  overflow: hidden;
-  background: #3e9bdd;
-  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  z-index: 1;
-  cursor: pointer;
-  font-size: 30px;
-}
-
-#Playlist .btn:hover {
-  transform: scale(1.2);
-  background: #5242c5;
-}
-
-#Playlist .test{
-  justify-content: center;
-}
-
-#Playlist #ypl_form{
-  margin-top: 50px;
+#infor_playlist{
   margin-left: 20%;
-  width: 60%;
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-#Playlist #ypl_form.show{
-  opacity: 1;
-  pointer-events: all;
-}
-
-#Playlist #opl_form{
-  margin-top: 50px;
-  margin-left: 20%;
-  width: 60%;
-  opacity: 0;
-  pointer-events: none;
-}
-
-#Playlist #opl_form.show{
-  opacity: 1;
-  pointer-events: all;
-}
-
-#Playlist .ypl{
-  padding: 15px 15px;
-  position: relative;
+  width: 50%;
+  margin-top: 30px;
+  padding: 15px 30px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
@@ -1841,20 +1817,21 @@ body {
   border-radius: 8px;
   z-index: 1;
   cursor: pointer;
-  font-size: 15px;
 }
 
-#Playlist .ypl:hover {
-  transform: scale(1.2);
-  background: #5242c5;
+#infor_playlist:hover {
+  transform: scale(1.05);
+  background: #aadefd;
 }
 
-#Playlist a{
-  color: #000;
+#in-playlist .title_hs {
+  margin-top: 60px;
+  margin-left: 50px;
 }
 
-#Playlist p{
-  color: #000;
+#view-by-search .title_hs {
+  margin-top: 60px;
+  margin-left: 50px;
 }
 
 /*=================================
@@ -1943,16 +1920,13 @@ body {
 #HotSong .title_hs{
   text-align: center;
   color: #097aca;
-  font-size: 100px;
+  font-size: 50px;
 }
 
-#HotSong .hot_songs_form{
+#infor_hotsong{
   margin-left: 20%;
   width: 60%;
-  margin-top: 20px;
-}
-
-#HotSong .infor_hotsong{
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
@@ -1966,19 +1940,14 @@ body {
   cursor: pointer;
 }
 
-#HotSong .infor_hotsong:hover {
-  transform: scale(1.2);
-  background: #b98dff;
+#infor_hotsong:hover {
+  transform: scale(1.05);
+  background: #aadefd;
 }
-
-#HotSong #rating{
-  margin-top: 30px;
-}
-
-#HotSong #rating .star-rating input {
+#rated .rate input {
   display: none;
 }
-#HotSong #rating .star-rating label{
+#rated .rate label{
   font-size: 22px;
   margin-top: 10px;
   color: #fd4;
@@ -1986,17 +1955,25 @@ body {
   float: right;
 }
 
-#HotSong #rating #rate-5{
+#HotSong #rate #rate-5{
   color: #444;
 }
 
-#HotSong .rated{
-  margin-bottom: 20px;
+#rated_form{
+  margin-top: 30px;
   text-align: center;
   align-content: center;
 }
 
-#HotSong .likes{
+#likes{
   text-align: center;
   font-size: 30px;
+}
+
+/*==========================
+# View By Search
+==========================*/
+
+#viewbysearch{
+  margin-top: 100px;
 }

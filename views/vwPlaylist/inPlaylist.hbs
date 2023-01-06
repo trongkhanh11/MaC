@@ -1,12 +1,13 @@
-<section id="HotSong">
-    <h1 class="title_hs">New Songs</h1>
-   
-    <div id="infor_hotsong">
+<section id="in-playlist">
+    {{#if playlist}}
+    <h1 class="title_hs">{{playlist.0.TENPLAYLIST}}</h1>
+    {{#each this.playlist}}
+   <div id="infor_hotsong">
         <div>
-            <h4 class="title"><a href="/Song/Chords">Thích Thích</a></h4>
-            <p>Poster: Sự Nguyễn</p>
-            <p>Singer: Phương Ly</p>
-            <p>Genre: Young music</p>
+            <h4 class="title"><a href="/search?bh={{TENBAIHAT}}">{{TENBAIHAT}}</a></h4>
+            <p>Poster: {{HOTEN}}</p>
+            <p>Singer:{{CASY}}</p>
+            <p>Genre: {{THELOAI}}</p>
         </div>
         <div id="rated_form">
             <div id="rated">
@@ -23,6 +24,15 @@
                     <label for="rate-1" class="fa fa-star"></label>        
                 </div>
             </div>
+            <div id="likes">
+                <i class="fa fa-thumbs-up"> 1000</i>
+            </div>
         </div>
     </div>
+    {{/each}}
+    {{else}}
+        <div>
+            Don't have any song
+        </div>
+    {{/if}}
 </section>
