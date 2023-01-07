@@ -419,4 +419,3 @@ call sp_ThemPost('Waitting For You','MONO','Nhạc Trẻ',1,'video','','Waiting 
 update post_video
 set ANH = 'img/video-tutorials-avt/WFY.png', THELOAIVIDEO = 1
 where mapost = 'Po15';
-

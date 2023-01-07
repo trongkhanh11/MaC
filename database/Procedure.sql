@@ -4,7 +4,7 @@ delimiter //
 create 
 -- drop
 procedure sp_ThemPost (
-in tenbh1 char(30), 
+in tenbh1 char(50), 
 in casy1 char (20),
 in theloai1 char(20),
 in id1 int,
@@ -109,7 +109,7 @@ delimiter //
 create 
 #drop
 procedure sp_Search (
-in tenbh varchar(30)) 
+in tenbh varchar(50)) 
 	begin
     if (tenbh = null) then set tenbh='';
     end if;
@@ -152,3 +152,5 @@ procedure sp_videotype1 ()
 								where pv.theloaivideo = 1 and p.mapost = pv.mapost;
 	end//
 delimiter ;
+
+select * from post_video

@@ -1,46 +1,50 @@
 <section id="video-tutorials">
-    <div class="container">
-        <h1 class="list-container-title">For newbies:</h1>
-        <div class="list-container">
-            {{#each this.listvid0}}
-            <div class="vid-list">
-                <a href="/videoTutorial/watchVideo"><img src={{ANH}} class="thumbnail"></a>
-                <div class="flex-div">
-                    <img src="img/user.png">
-                    <div class="vid-info">
-                        <a href="/videoTutorial/watchVideo">{{TENVIDEO}}</a>
-                        <p>{{NGUOIDANG}}</p>
-                        <p>{{DESCRIBDE}}</p>
-                    </div>
-                </div>
+  <div class="container">
+    <h1 class="list-container-title">For newbies:</h1>
+    <div class="list-container">
+      {{#each this.listvid0}}
+        <div class="vid-list">
+          <a href="/videoTutorial/watchVideo"><img
+              src={{ANH}}
+              class="thumbnail"
+            /></a>
+          <div class="flex-div">
+            <img src="img/user.png" />
+            <div class="vid-info">
+              <a href="/videoTutorial/watchVideo">{{TENVIDEO}}</a>
+              <p>{{NGUOIDANG}}</p>
+              <p>{{DESCRIBDE}}</p>
             </div>
-            {{/each}}
+          </div>
         </div>
-
-
-        <h1 class="list-container-title">New songs:</h1>
-        <div class="list-container">
-
-            {{#each this.listvid1}}
-                <div class="vid-list">
-                    <a href="/videoTutorial/watchVideo"><img src={{ANH}} class="thumbnail"></a>
-                    <div class="flex-div">
-                        <img src="img/user.png">
-                        <div class="vid-info">
-                            <a href="/videoTutorial/watchVideo">{{TENVIDEO}}</a>
-                            <p>{{NGUOIDANG}}</p>
-                            <p>{{DESCRIBDE}}</p>
-                        </div>
-                    </div>
-                </div>
-            {{/each}}
-        </div>
-
+      {{/each}}
     </div>
+    <h1 class="list-container-title">New songs:</h1>
+    <div class="list-container">
+
+      {{#each this.listvid1}}
+        <div class="vid-list">
+          <a href="/videoTutorial/watchVideo"><img
+              src={{ANH}}
+              class="thumbnail"
+            /></a>
+          <div class="flex-div">
+            <img src="img/user.png" />
+            <div class="vid-info">
+              <a href="/videoTutorial/watchVideo">{{TENVIDEO}}</a>
+              <p>{{NGUOIDANG}}</p>
+              <p>{{DESCRIBDE}}</p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+  </div>
 </section>
 
-{{#section 'js'}}
-    <script>
-       
-    </script>
+{{#section "js"}}
+  <script>
+
+  </script>
 {{/section}}
