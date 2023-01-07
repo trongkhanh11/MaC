@@ -1839,7 +1839,13 @@ body {
 =================================*/
 
 #Song{
-  margin-top: 100px;
+  margin-top: 80px;
+  background: #d6edff;
+}
+
+#Song .container {
+  background: #fff;
+  padding: 30px 0;
 }
 
 #Song .infor-song-form{
@@ -1849,25 +1855,49 @@ body {
 }
 
 #Song .Name_song{
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 #Song pre{
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #Song .infor-song{
   background: #fff;
   border: 2px solid #3e9bdd;
   border-radius: 20px;
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+#Song .title-infor {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+#Song .song-rating {
+  display: flex;
+  align-items: center;
+}
+
+#Song .song-rating .rate {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+#Song .star-rating label{
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 #Song .add-playlist{
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 #Song #show-playlist{
@@ -1880,33 +1910,17 @@ body {
   pointer-events: all;
 }
 
-#Song #Rating{
-  display: flex;
-  justify-content: center;
+#Song .title-ll {
+  font-size: 20px;
 }
 
-#Song #Rating .star-Rating input {
-  display: none;
-}
-
-#Song #Rating input:not(:checked) ~ label:hover,
-#Song #Rating input:not(:checked) ~ label:hover ~ label{   color: #fd4;
-}
-#Song #Rating input:checked ~ label{
-  color: #fd4;
-}
-
-#Song .rate{
-  text-align: center;
-}
-
-#Song #Rating .star-Rating label{
-  font-size: 22px;
+#Song .your-playlist {
+  margin-left: 20px;
   margin-top: 10px;
-  color: #444;
-  padding: 5px;
-  float: right;
-  transition: all 0.2s ease;
+}
+
+#Song .Lyrics {
+  margin-bottom: 30px;
 }
 
 /*============================
