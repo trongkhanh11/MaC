@@ -13,7 +13,10 @@ router.get('/', async function (req, res) {
 });
 
 router.get('/watchVideo', async function (req, res) {
-    res.render('vwVideoTutorial/watchVideo');
+    const list = await commentModel.getComments('Po1');
+    res.render('vwVideoTutorial/watchVideo', {
+        list
+    });
 });
 
 export default router;
