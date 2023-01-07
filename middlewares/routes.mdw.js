@@ -9,18 +9,10 @@ import songRoute from '../routes/Song.route.js'
 import viewSearch from '../routes/Search.route.js'
 import adminRoute from '../routes/admin.route.js'
 
-
-// export default function (app) {
-//   app.get('/', function (req, res) {
-//     res.render('vwAdmin/index', {
-//       layout: false
-//     });
-//   })
-
-  export default function (app) {
-    app.get('/', function (req, res) {
-      res.render('home');
-    })
+export default function (app) {
+  app.get('/', function (req, res) {
+    res.render('home');
+  })
 
   app.use('/account', accountRoute, express.static('public'));
   app.use('/videoTutorial', videoTutorialRoute, express.static('public'));

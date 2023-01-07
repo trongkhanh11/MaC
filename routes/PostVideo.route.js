@@ -26,7 +26,7 @@ const upload = multer({ storage });
 router.post('/add', upload.single('video'),(req, res) =>  {
     //console.log(req.body);
     res.redirect('../');
-    return post_videoModel.createPost(req.body,2);
+    return post_videoModel.createPost(req.body,req.session.authUser.ID);
 });
 
 
