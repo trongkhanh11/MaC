@@ -188,14 +188,15 @@ body {
     background: #fff;
     top: 80%;
     right: 5%;
-    width: 220px;
+    width: fit-content;
+    min-width: 220px;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
     box-shadow: 1px 1px 5px rgba(119, 119, 119, .5);
   }
   
-  #header .sub-menu-wrap.open-menu {
+  #header .sub-menu-wrap.open-menu { 
     max-height: 330px;
   }
   
@@ -208,7 +209,6 @@ body {
   #header .user-info {
      display: flex;
      align-items: center;
-     justify-content: center;
   }
   
   #header .user-info img {
@@ -1821,7 +1821,17 @@ body {
 
 #infor_playlist:hover {
   transform: scale(1.05);
-  background: #b98dff;
+  background: #aadefd;
+}
+
+#in-playlist .title_hs {
+  margin-top: 60px;
+  margin-left: 50px;
+}
+
+#view-by-search .title_hs {
+  margin-top: 60px;
+  margin-left: 50px;
 }
 
 /*=================================
@@ -1932,7 +1942,7 @@ body {
 
 #infor_hotsong:hover {
   transform: scale(1.05);
-  background: #b98dff;
+  background: #aadefd;
 }
 #rated .rate input {
   display: none;
