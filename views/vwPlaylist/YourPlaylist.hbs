@@ -1,6 +1,6 @@
 <section id="YourPlaylist">
     <h1 class="title">Your Playlist</h1>
-
+    {{#if this.playlist}}
     <div class="YourPlaylist_form">
         {{#each this.playlist}}
         <div id="infor_playlist">
@@ -24,4 +24,9 @@
           </nav>
         </form>
     </div>
+    {{else}}
+        <div>
+            Unknown Playlist
+        </div>
+    {{/if}}
 </section>

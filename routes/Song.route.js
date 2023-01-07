@@ -16,7 +16,7 @@ var mapost='';
 router.get('/Chords', async function (req, res) {
     mapost = req.query.mapost;
     const list = await songModel.findChord(mapost);
-    const playlist = await songModel.findMyPlaylist(1);
+    const playlist = await songModel.findMyPlaylist(req.session.authUser.ID);
     console.log(list);
     res.render('vwSong/Chords',{
         list,

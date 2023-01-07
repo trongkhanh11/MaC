@@ -14,6 +14,7 @@ export default {
     async findMyPlaylist(id){
             const proc = await db.raw('call sp_myPlaylist(?)',id);
             const list = db('temp');
+            if (list.length===0) return null;
             return list;
     },
 

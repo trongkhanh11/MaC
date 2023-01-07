@@ -12,9 +12,9 @@ export default {
     },
 
     viewPostChord(maPost){
-        return db(
+        return db('(' +
             db.raw('select * from post inner join post_chord on post.mapost = post_chord.mapost where post.mapost =' + maPost)
-        )
+            + ')')
     },
 
     delPost(maPost){

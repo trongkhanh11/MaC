@@ -10,7 +10,8 @@ export default {
     async findMyPlaylist(id){
             const proc = await db.raw('call sp_myPlaylist(?)',id);
             const list = db('temp');
-            return list
+            if (list.length===0) return null;
+            return list;
     },
       async addSong(S_id,P_id){
             const proc = await db.raw("call sp_ThemBH_Playlist(\'" + S_id + "\',\'" + P_id + "\')");

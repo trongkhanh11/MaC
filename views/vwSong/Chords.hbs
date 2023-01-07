@@ -20,6 +20,7 @@
             </div>
             <div id="show-playlist" class="">
                 <h3 class="title-ll">Your playlist</h3>
+                {{#if this.playlist}}
                 {{#each this.playlist}}
                 <a href="chords/add?maplaylist={{MAPLAYLIST}}">
                     <i class="fa fa-plus" aria-hidden="true">
@@ -28,7 +29,7 @@
                 </a>
                 <br>
                 {{/each}}
-
+                {{/if}}
             </div>
             <div class="publisher">
                 <div id="Rating">
