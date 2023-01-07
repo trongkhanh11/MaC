@@ -1,6 +1,6 @@
 <section id="YourPlaylist">
     <h1 class="title">Your Playlist</h1>
-
+    {{#if this.playlist}}
     <div class="YourPlaylist_form">
         {{#each this.playlist}}
         <div id="infor_playlist">
@@ -11,17 +11,37 @@
                 </div>
         </div>
         {{/each}}
-        <form id="CreatePlaylist" method="post">
-            <nav id="navbar" class="navbar">
-            <ul>
-              <li class="dropdown"><a href="#"><span class="title_cpl">Create Playlist</span></a>
-                <ul>
-                  <input type="text" id="namep" name="namep" placeholder="Enter name playlist...">
-                  <input id="create_btn" type="submit" value="Create" formaction="yourplaylist/add">
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </form>
+        <form id="CreatePlaylist" method="post" class="create-playlist">
+              <nav id="navbar" class="navbar">
+              <ul>
+                <li class="dropdown"><a href="#"><span class="title_cpl">Create Playlist</span></a>
+                  <ul>
+                    <input type="text" id="namep" name="namep" placeholder="Enter name playlist...">
+                    <input id="create_btn" type="submit" value="Create" formaction="yourplaylist/add">
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+      </form>
     </div>
+    {{else}}
+      <div class="YourPlaylist_form">
+        <div class="message">
+            Unknown Playlist...
+        </div>
+        <form id="CreatePlaylist" method="post" class="create-playlist">
+              <nav id="navbar" class="navbar">
+              <ul>
+                <li class="dropdown"><a href="#"><span class="title_cpl">Create Playlist</span></a>
+                  <ul>
+                    <input type="text" id="namep" name="namep" placeholder="Enter name playlist...">
+                    <input id="create_btn" type="submit" value="Create" formaction="yourplaylist/add">
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+        </form>
+      </div>
+    {{/if}}
+      
 </section>

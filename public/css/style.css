@@ -1778,6 +1778,18 @@ body {
 
 #YourPlaylist .YourPlaylist_form{
   display: flex;
+  justify-content: center;
+}
+
+#YourPlaylist .create-playlist ul{
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+#YourPlaylist .message {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
 }
 
 

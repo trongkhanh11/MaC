@@ -1,436 +1,341 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Admin</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Admin</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-  <!-- Favicons -->
-  <link href="img/mac-favicon.png" rel="icon">
-  <link href="img/mac-apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="img/mac-favicon.png" rel="icon" />
+    <link href="img/mac-apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="vendor/aos/aos.css" rel="stylesheet" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Template Main CSS File -->
-  <link href="css/admin.css" rel="stylesheet">
-</head>
+    <!-- Template Main CSS File -->
+    <link href="css/admin.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">Admin</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="#" onclick="tabs(0)">
-					<i class='bx bxs-dashboard'></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li>
-				<a href="#" onclick="tabs(1)">
-					<i class='bx bxs-user'></i> 
-					<span class="text">User management</span>
-				</a>
-			</li>
-			<li>
-				<a href="#" onclick="tabs(2)">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Post management</span>
-				</a>
-			</li>
-		</ul>
-		<ul class="side-menu">
-			<li>
-				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
-			<li>
-                <form id="formLogout" action="/account/admin-logout" method="post"></form>
-				<a href="javascript: $('#formLogout').submit();" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <i class="bx bxs-smile"></i>
+        <span class="text">Admin</span>
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#" onclick="tabs(0)">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="tabs(1)">
+            <i class="bx bxs-user"></i>
+            <span class="text">User management</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="tabs(2)">
+            <i class="bx bxs-doughnut-chart"></i>
+            <span class="text">Post management</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <form
+            id="formLogout"
+            action="/account/admin-logout"
+            method="post"
+          ></form>
+          <a href="javascript: $('#formLogout').submit();" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
 
     <!-- CONTENT -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu' ></i>
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
-			</form>
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
-			<a href="#" class="notification">
-				<i class='bx bxs-bell' ></i>
-				<span class="num">8</span>
-			</a>
-			<a href="#" class="profile">
-				<img src="img/user.png">
-			</a>
-		</nav>
-		<!-- NAVBAR -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn"><i
+                class="bx bx-search"
+              ></i></button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="img/user.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
 
-		<!-- MAIN -->
-		<main>
-            <div class="dashboard tabShow">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Dashboard</h1>
-                        <ul class="breadcrumb">
-                            <li>
-                                <a href="#">Dashboard</a>
-                            </li>
-                            <li><i class='bx bx-chevron-right' ></i></li>
-                            <li>
-                                <a class="active" href="/">Home</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <ul class="box-info">
-                    <li>
-                        <i class='bx bxs-calendar-check' ></i>
-                        <span class="text">
-                            <h3>1020</h3>
-                            <p>Posts</p>
-                        </span>
-                    </li>
-                    <li>
-                        <i class='bx bxs-group' ></i>
-                        <span class="text">
-                            <h3>2834</h3>
-                            <p>Users</p>
-                        </span>
-                    </li>
-                    <li>
-                        <i class='bx bx-cog'></i>
-                        <span class="text">
-                            <h3>5</h3>
-                            <p>Admins</p>
-                        </span>
-                    </li>
-                </ul>
-
-
-                <div class="table-data">
-                    <div class="order">
-                        <div class="head">
-                            <h3>Active Users</h3>
-                            <i class='bx bx-search' ></i>
-                            <i class='bx bx-filter' ></i>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Full name</th>
-                                    <th>Email</th>
-                                    <th>DOB</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <!-- MAIN -->
+      <main>
+        <div class="dashboard tabShow">
+          <div class="head-title">
+            <div class="left">
+              <h1>Dashboard</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Dashboard</a>
+                </li>
+                <li><i class="bx bx-chevron-right"></i></li>
+                <li>
+                  <a class="active" href="/">Home</a>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div class="user-management tabShow">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>User Management</h1>
-                        <ul class="breadcrumb">
-                            <li>
-                                <a href="#">User management</a>
-                            </li>
-                            <li><i class='bx bx-chevron-right' ></i></li>
-                            <li>
-                                <a class="active" href="/">Home</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+          <ul class="box-info">
+            {{#each this.spost}}
+              <li>
+                <i class="bx bxs-calendar-check"></i>
+                <span class="text">
+                  <h3>{{mpost}}</h3>
+                  <p>Posts</p>
+                </span>
+              </li>
+            {{/each}}
 
-                <div class="table-data">
-                    <div class="order">
-                        <div class="head">
-                            <h3>User List</h3>
-                            <i class='bx bx-search' ></i>
-                            <i class='bx bx-filter' ></i>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Full name</th>
-                                    <th>Email</th>
-                                    <th>DOB</th>
-                                    <th>Ban</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                    <td>
-                                        <button type="submit" class="ban-btn">
-                                            <i class="bi bi-dash-circle-fill"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                    <td>
-                                        <button type="submit" class="ban-btn">
-                                            <i class="bi bi-dash-circle-fill"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                    <td>
-                                        <button type="submit" class="ban-btn">
-                                            <i class="bi bi-dash-circle-fill"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                    <td>
-                                        <button type="submit" class="ban-btn">
-                                            <i class="bi bi-dash-circle-fill"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="img/user.png">
-                                        <p>username</p>
-                                    </td>
-                                    <td>Full Name</td>
-                                    <td>email@gmail.com</td>
-                                    <td>01-11-2002</td> 
-                                    <td>
-                                        <button type="submit" class="ban-btn">
-                                            <i class="bi bi-dash-circle-fill"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            {{#each this.suser}}
+              <li>
+                <i class="bx bxs-group"></i>
+                <span class="text">
+                  <h3>{{userth}}</h3>
+                  <p>Users</p>
+                </span>
+              </li>
+            {{/each}}
+
+            {{#each this.sadmin}}
+              <li>
+                <i class="bx bx-cog"></i>
+                <span class="text">
+                  <h3>{{userth}}</h3>
+                  <p>Admins</p>
+                </span>
+              </li>
+            {{/each}}
+          </ul>
+
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>Active Users</h3>
+                <i class="bx bx-search"></i>
+                <i class="bx bx-filter"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Full name</th>
+                    <th>Email</th>
+                    <th>DOB</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each this.acuser}}
+                    <tr>
+
+                      <td>
+                        <img src="img/user.png" />
+                        <p> {{USERNAME}}</p>
+                      </td>
+                      <td> {{HOTEN}}</td>
+                      <td> {{EMAIL}}</td>
+                      <td>{{NTNSINH}}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
             </div>
+          </div>
+        </div>
 
-            <div class="post-management tabShow">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Post Management</h1>
-                        <ul class="breadcrumb">
-                            <li>
-                                <a href="#">Post management</a>
-                            </li>
-                            <li><i class='bx bx-chevron-right' ></i></li>
-                            <li>
-                                <a class="active" href="/">Home</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="table-data">
-                    <div class="order">
-                        <div class="head">
-                            <h3>Post List</h3>
-                            <i class='bx bx-search' ></i>
-                            <i class='bx bx-filter' ></i>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Song name</th>
-                                    <th>Singer</th>
-                                    <th>Music genre</th>
-                                    <th>Type</th>
-                                    <th>Rating</th>
-                                    <th>Publisher</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Chuyện rằng</td>
-                                    <td>Thịnh Suy</td>
-                                    <td>Indie pop</td>
-                                    <td>Chord</td>
-                                    <td>4.8</td>
-                                    <td>Trọng Khánh</td>
-                                    <td>
-                                        <button type="submit" class="delete-btn">
-                                            <i class="bi bi-trash3"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chuyện rằng</td>
-                                    <td>Thịnh Suy</td>
-                                    <td>Indie pop</td>
-                                    <td>Chord</td>
-                                    <td>4.8</td>
-                                    <td>Trọng Khánh</td> 
-                                    <td>
-                                        <button type="submit" class="delete-btn">
-                                            <i class="bi bi-trash3"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chuyện rằng</td>
-                                    <td>Thịnh Suy</td>
-                                    <td>Indie pop</td>
-                                    <td>Chord</td>
-                                    <td>4.8</td>
-                                    <td>Trọng Khánh</td> 
-                                    <td>
-                                        <button type="submit" class="delete-btn">
-                                            <i class="bi bi-trash3"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chuyện rằng</td>
-                                    <td>Thịnh Suy</td>
-                                    <td>Indie pop</td>
-                                    <td>Chord</td>
-                                    <td>4.8</td>
-                                    <td>Trọng Khánh</td> 
-                                    <td>
-                                        <button type="submit" class="delete-btn">
-                                            <i class="bi bi-trash3"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chuyện rằng</td>
-                                    <td>Thịnh Suy</td>
-                                    <td>Indie pop</td>
-                                    <td>Chord</td>
-                                    <td>4.8</td>
-                                    <td>Trọng Khánh</td> 
-                                    <td>
-                                        <button type="submit" class="delete-btn">
-                                            <i class="bi bi-trash3"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <div class="user-management tabShow">
+          <div class="head-title">
+            <div class="left">
+              <h1>User Management</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">User management</a>
+                </li>
+                <li><i class="bx bx-chevron-right"></i></li>
+                <li>
+                  <a class="active" href="/">Home</a>
+                </li>
+              </ul>
             </div>
-        </main>
-		<!-- MAIN -->
-	</section>
-	<!-- END CONTENT -->
+          </div>
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>User List</h3>
+                <i class="bx bx-search"></i>
+                <i class="bx bx-filter"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Full name</th>
+                    <th>Email</th>
+                    <th>DOB</th>
+                    <th>Ban</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each this.user}}
+                    <tr>
+
+                      <td>
+                        <img src="img/user.png" />
+                        <p> {{USERNAME}}</p>
+                      </td>
+                      <td> {{HOTEN}}</td>
+                      <td> {{EMAIL}}</td>
+                      <td>{{NTNSINH}}</td>
+                      <td>
+                        <form
+                          action="/admin/updateban?username={{USERNAME}}"
+                          method="post"
+                        >
+                          <button
+                            type="submit"
+                            onclick="alert('Ban {{USERNAME}} rồi nhé ') "
+                            class="ban-btn"
+                          >
+                            <i class="bi bi-circle-fill"></i>
+                          </button>
+                        </form>
+                      </td>
+
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-management tabShow">
+          <div class="head-title">
+            <div class="left">
+              <h1>Post Management</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Post management</a>
+                </li>
+                <li><i class="bx bx-chevron-right"></i></li>
+                <li>
+                  <a class="active" href="/">Home</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>Post List</h3>
+                <i class="bx bx-search"></i>
+                <i class="bx bx-filter"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Song name</th>
+                    <th>Singer</th>
+                    <th>Music genre</th>
+                    <th>Type</th>
+                    <th>Rating</th>
+                    <th>Publisher</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each this.post}}
+                    <tr>
+
+                      <td>
+                        <img src="img/user.png" />
+                        <p> {{TENBAIHAT}}</p>
+                      </td>
+                      <td> {{CASY}}</td>
+                      <td> {{THELOAI}}</td>
+                      <td>{{LOAI}}</td>
+                      <td>{{RATINGSUM}}</td>
+                      <td>{{NGUOIDANG}}</td>
+                      <td>
+                        <form
+                          action="/admin/del?tenbaihat={{TENBAIHAT}}&tencasy={{CASY}}"
+                          method="post"
+                        >
+                          <button
+                            type="submit"
+                            onclick="alert('xóa {{TENBAIHAT}} loại {{LOAI}} của {{NGUOIDANG}} rồi nhé ') "
+                            class="delete-btn"
+                          >
+                            <i class="bi bi-trash3"></i>
+                          </button>
+                        </form>
+                      </td>
+
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- END CONTENT -->
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+    ><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="vendor/purecounter/purecounter_vanilla.js"></script>
@@ -447,9 +352,8 @@
     <script src="js/admin-script.js"></script>
 
     <script>
-        $(".tab").click(function() {
-            $(this).addClass("active").siblings().removeClass("active"); 
-        })
+      $(".tab").click(function() {
+      $(this).addClass("active").siblings().removeClass("active"); })
     </script>
-</body>
+  </body>
 </html>

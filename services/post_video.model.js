@@ -7,8 +7,14 @@ export default {
            + entity.theloai1 + '\',' + id1 + ',\'video\',\'\',\'' + entity.tenvideo1 + '\',\'' + entity.describe1 + '\')');
     },
 
-    async viewVideo(){
+    async viewVideoBasic(){
         const proc = await db.raw('call sp_videotype0()');
+        const list = db('temp');
+        return list
+    },
+
+    async viewVideoNew(){
+        const proc = await db.raw('call sp_videotype1()');
         const list = db('temp');
         return list
     },

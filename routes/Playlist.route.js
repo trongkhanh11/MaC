@@ -20,7 +20,8 @@ router.get('/inplaylist', async function (req, res) {
 });
 
 router.get('/yourplaylist', async function (req, res) {
-    const playlist = await playlistModel.findMyPlaylist(req.session.ID);
+    console.log(req.session.authUser.ID);
+    const playlist = await playlistModel.findMyPlaylist(req.session.authUser.ID);
     res.render('vwPlaylist/yourplaylist',{
         playlist
     });
@@ -28,7 +29,7 @@ router.get('/yourplaylist', async function (req, res) {
 
 router.post('/yourplaylist/add', async function (req, res) {
     res.redirect('/Playlist/yourplaylist');
-    return playlistModel.createPlaylist(1,req.body.namep)
+    return playlistModel.createPlaylist(req.session.authUser.ID,req.body.namep)
 });
 
 export default router;

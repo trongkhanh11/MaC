@@ -1,6 +1,8 @@
 <section id="watch-videos">
     <div class="container">
+
         <div class="row">
+
             <div class="play-video">
                 <video controls muted autoplay>
                     <source src="videos/video-1.mp4" type="video/mp4">
@@ -31,6 +33,7 @@
                     </div>
                     <span class="num-of-ratings">(11)</span>
                 </div>
+
                 <div class="video-description">
                     <p>Video about ...</p>
                     <p>If you think the video is good, please rate it 5 stars</p>
@@ -39,34 +42,31 @@
 
                     <div class="add-comment">
                         <img src="img/user.png">
-                        <input type="text" placeholder="Write comment...">
+                        <input type="text" name="comment" placeholder="Write comment...">
                     </div>
                     <input id="submit_cmt" type="submit" value="submit">
+
+                    {{#if list}}
+                    {{#each this.list}}
                     <div class="old-comment">
                         <img src="img/user.png">
                         <div>
-                            <h3>Trong Khanh <span>2 days ago</span></h3>
-                            <p>Video hay vcl</p>
+                            <h3>{{hoten}}<span>2 days ago</span></h3>
+                            <p>{{cmt}}</p>  
                             <div class="acomment-action">
                                 <span>Reply</span>
                                 <a href="">All replies</a>
                             </div>
                         </div>
                     </div>
-                    <div class="old-comment">
-                        <img src="img/user.png">
-                        <div>
-                            <h3>Dat Kha<span>2 days ago</span></h3>
-                            <p>Video nhu cc</p>
-                            <div class="acomment-action">
-                                <span>Reply</span>
-                                <a href="">All replies</a>
-                            </div>
-                        </div>
-                    </div>
+                    {{/each}}
+                    {{/if}}
                 </div>
             </div>
+
+            {{!-- Side bar bên phải --}}
             <div class="right-sidebar">
+
                 <div class="side-video-list">
                     <a href="" class="small-thumbnail"><img src="img/video-tutorials-avt/1.png"></a>
                     <div class="vid-info">
@@ -147,13 +147,12 @@
                         <p>15k Views </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </section>
 
 {{#section 'js'}}
-    <script>
-
-    </script>
+    <script> </script>
 {{/section}}
