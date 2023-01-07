@@ -3,14 +3,9 @@
     {{#if list}}
     {{#each this.list}}
     <div id="infor_hotsong">
-        <script>
-        function phanloai(){
-            alert({{list.0.LOAI}});
-        }
-        </script>
         <div>
             <h4 class="title">
-                <a onclick="phanloai()" href="" id="theloai" >
+                <a href="/song/chords?mapost={{MAPOST}}" id="theloai" >
                     {{TENBAIHAT}}
                 </a>
             </h4>

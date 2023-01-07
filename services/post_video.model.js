@@ -7,10 +7,10 @@ export default {
            + entity.theloai1 + '\',' + id1 + ',\'video\',\'\',\'' + entity.tenvideo1 + '\',\'' + entity.describe1 + '\')');
     },
 
-    viewPostVideo(maPost){
-        return db(
-            db.raw('select * from post inner join post_video on post.mapost = post_video.mapost where post.mapost =' + maPost)
-        )
+    async viewVideo(){
+        const proc = await db.raw('call sp_videotype0()');
+        const list = db('temp');
+        return list
     },
 
     viewListPost(){

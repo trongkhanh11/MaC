@@ -16,10 +16,7 @@ export default {
             const list = db('temp');
             return list
     },
-    async addSong(S_id,P_id){
-        const proc = await db.raw('sp_ThemBH_Playlist(?,?)',S_id,P_id);
-        return proc
-    },
+
     async createPlaylist(U_id,name){
         return await db.raw("call sp_TaoPlaylist(" + U_id + ",\'" + name + "\')");
     },

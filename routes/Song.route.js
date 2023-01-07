@@ -11,13 +11,23 @@ router.get('/newSongs', async function (req, res) {
     res.render('vwSong/newSongs');
 });
 
+var mapost='';
+
 router.get('/Chords', async function (req, res) {
-    const mapost = req.query.mapost;
+    mapost = req.query.mapost;
     const list = await songModel.findChord(mapost);
+    const playlist = await songModel.findMyPlaylist(1);
     console.log(list);
     res.render('vwSong/Chords',{
-        list
+        list,
+        playlist
     });
+});
+
+router.get('/Chords/add', async function (req, res) {
+    const maplaylist = req.query.maplaylist;
+    res.redirect('/song/Chords?mapost=' + mapost);
+    return songModel.addSong(mapost,maplaylist);
 });
 
 router.get('/young', async function (req, res) {
